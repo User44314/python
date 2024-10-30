@@ -1,0 +1,767 @@
+#%% first point
+name = "flavio"
+print(name)
+
+#%%second point
+name = "test"
+print(name)
+
+age=int(20)
+print(age)
+
+fraction=0.1
+intFraction = int(fraction)
+print(intFraction)
+
+
+
+# %% therd point
+1 + 1
+2 - 1
+2 * 2
+4 / 2
+4 % 3
+4 ** 2
+4 // 2
+
+print(-4)
+"""concatenate"""
+text = "roger" + "is a good dog"
+print(text)
+
+age1 = 8
+age1 += 1
+print(age1)
+
+# %% point4
+a =1 
+b =2
+
+print (a == b)
+print (a != b)
+print(a > b)
+print(a < b)
+
+
+condition1 = True
+condition2 = False
+
+not condition1 #False
+condition1 and condition2 #False
+condition1 or condition2 #True
+
+# %%
+""" or used in an expression returns the value of the first operand that is not a
+falsy value ( False , 0 , '' , [] ..). Otherwise it returns the last operand. """
+print(0 or 1) ### 1
+print(False or 'hey') ### 'hey'
+print('hi' or 'hey') ### 'hi'
+print([] or False) ### False
+print(False or []) ### []
+
+
+""" and only evaluates the second argument if the first one is true. So if the first
+argument is falsy ( False , 0 , '' , [] ..), """
+
+print(0 and 1) ### 0
+print(1 and 0) ### 0
+print(False and 'hey') ### False
+print('hi' and 'hey') ### 'hey'
+print([] and False ) ### []
+print(False and [] ) ### False
+
+
+"""        Bitwise operator
+
+& performs binary AND
+| performs binary OR
+^ performs a binary XOR operation
+~ performs a binary NOT operation
+<< shift left operation
+>> shift right operation """
+
+
+""" is - называется тождественным оператором. Он используется для сравнения двух объектов и
+возвращает true, если оба являются одним и тем же объектом. Подробнее об объектах позже.
+
+in - называется оператором принадлежности. Используется для определения того, является ли значение
+содержится в списке или другой последовательности. Подробнее о списках и других последовательностях
+позже """
+
+# %%
+def is_adult(age):
+    if age > 18:
+        return True
+    else:
+        return False
+
+""" You can implement it with the ternary operator in this way: """
+
+def is_adult(age):
+    return True if age > 18 else False
+# %%
+name = "Roger"
+name += " is a good dog"
+print(name) #Roger is a good dog
+
+str(8) #"8"
+
+text2 = "heloo world"
+print(text2.upper())
+
+
+name = "Roger"
+print(len(name)) #5
+
+name = "Roger"
+print("ger" in name) #True
+
+name = "Ro\"ger"
+print(name) #"Ro"Ger"
+""" This applies to single quotes too \' , and for special formatting characters
+like \t for tab, \n for new line and \\ for the backslash. """
+
+
+name = "Roger"
+print(name[0]) #'R'
+print(name[1]) #'o'
+print(name[2]) #'g'
+
+name = "Roger"
+name[-1] #"r"
+
+name = "Roger"
+print(name[0:2]) #"Ro"
+print(name[:2]) #"Ro"
+print(name[2:]) #"ger"
+
+done = True
+type(done) == bool #True
+
+""" Complex number """
+
+complexNumber = 2+3j
+complexNumber = complex(2, 3)
+type(complexNumber) == complex #True
+""" Получив комплексное число, можно получить его действительную и мнимую часть: """
+complexNumber.real #2.0
+complexNumber.imag #3.0
+
+round(0.12) #0
+round(0.12, 1) #0.1
+
+from enum import Enum
+class State(Enum):
+    INACTIVE = 0
+    ACTIVE = 1
+print(State.ACTIVE)
+list(State) # [<State.INACTIVE: 0>, <State.ACTIVE: 1>]
+len(State)
+
+
+
+print('What is your age?')
+age = input()
+print('Your age is ' + age)
+
+
+condition = True
+if condition == True:
+    print("The condition")
+    print("was true")
+print("Outside of the if")
+
+
+condition = True
+if condition == True:
+    print("The condition")
+    print("was True")
+else:
+    print("The condition")
+    print("was False")
+
+
+condition = True
+name = "Roger"
+if condition == True:
+    print("The condition")
+    print("was True")
+elif name == "Roger":
+    print("Hello Roger")
+else:
+    print("The condition")
+    print("was False")
+
+
+
+a = 2
+result = 2 if a == 0 else 3
+print(result) # 3
+
+
+""" Lists """
+
+dogs = ["Roger", "Syd"]
+items = ["Roger", 1, "Syd", True]
+print("Roger" in items) # True
+items[0] # "Roger"
+items[1] # 1
+items[3] # True
+
+items.index("Roger") # 0
+items.index("Syd") # 2
+
+""" As with strings, using a negative index will start searching from the end: """
+items[-1] # True
+items[0:2] # ["Roger", 1]
+items[2:] # ["Syd", True]
+items.append("Test")
+print(items)
+items += ["Test2"]
+print(items)
+items.remove("Test")
+items += ["Test1", "Test2"]
+items.extend(["Test1", "Test2"])
+items.insert(1, "Test22") # add "Test" at index 1
+items[1:1] = ["Test11", "Test23"]
+items1 = [7, 1, 5, 3]
+items1.sort() #[1, 3, 5, 7]
+print(items1)
+items11 = ["Test2", "Test1"]
+items11.sort(key=str.lower) # ['Test1', 'Test2']
+print(items11)
+
+itemscopy = items[:]
+
+
+""" Tuples """
+
+names = ("Roger", "Syd")
+names[0] # "Roger"
+names[1] # "Syd"items.index("Roger") # 0
+items.index("Syd") # 2
+names[-1] # True
+len(names) # 2
+print("Roger" in names) # True
+names[0:2] # ('Roger', 'Syd')
+names[1:] # ('Syd',)
+sorted(names)
+newTuple = names + ("Vanille", "Tina")
+print(newTuple)
+
+""" Dictionaries """
+dog = { 'name': 'Roger' }
+dog = { 'name': 'Roger', 'age': 8 }
+dog['name'] # 'Roger'
+dog['age'] # 8
+dog['name'] = 'Syd'
+dog.get('name') # 'Roger'
+dog.get('test', 'default') # 'default'
+dog.pop('name') # 'Roger'
+dog.popitem()
+'name' in dog # True
+list(dog.keys()) # ['name', 'age']
+print(list(dog.values()))
+# ['Roger', 8]
+print(list(dog.items()))
+# [('name', 'Roger'), ('age', 8)]
+len(dog) #2
+dog['favorite food'] = 'Meat' # add new 
+del dog['favorite food']
+dogCopy = dog.copy()
+
+
+""" Sets """
+
+names = {"Roger", "Syd"}
+
+set1 = {"Roger", "Syd"}
+set2 = {"Roger"}
+intersect = set1 & set2 #{'Roger'}
+
+set1 = {"Roger", "Syd"}
+set2 = {"Luna"}
+union = set1 | set2
+#{'Syd', 'Luna', 'Roger'}
+
+set1 = {"Roger", "Syd"}
+set2 = {"Roger"}
+difference = set1 - set2 #{'Syd'}
+
+set1 = {"Roger", "Syd"}
+set2 = {"Roger"}
+isSuperset = set1 > set2 # True
+
+names = {"Roger", "Syd"}
+len(names) # 2
+
+names = {"Roger", "Syd"}
+list(names) #['Syd', 'Roger']
+
+print("Roger" in names) # True
+
+""" Functions """
+
+def hello():
+    print('Hello!')
+hello()
+
+def hello(name):
+    print('Hello ' + name + '!')
+hello('Roger')
+
+def hello(name='my friend'):
+    print('Hello ' + name + '!')
+hello()
+#Hello my friend!
+
+def hello(name, age):
+    print('Hello ' + name + ', you are ' + str(age) + ' years old!')
+print('rt', 12)
+
+def change(value):
+    value = 2
+val = 1
+change(val)
+print(val) #1
+
+def hello(name):
+    print('Hello ' + name + '!')
+    return name
+hello('roggger')
+
+""" Когда функция встречает оператор return, функция завершается. """
+def hello(name):
+    print('Hello ' + name + '!')
+    return
+
+def hello(name):
+    if not name:
+        return
+    print('Hello ' + name + '!')
+hello('trtrtrt')
+
+def hello(name):
+    print('Hello ' + name + '!')
+    return name, 'Roger', 8
+
+def hello(name):
+    print('Hello ' + name + '!')
+    return name, 'Roger', 8
+print(hello('Syd')) #('Syd', 'Roger', 8)
+
+
+""" Objects """
+age = 8
+print(age.real) # 8
+print(age.imag) # 0
+print(age.bit_length()) #4
+# the bit_length() method returns the number of bits necessary
+# to represent this number in binary notation
+
+items = [1, 2]
+items.append(3)
+items.pop()
+# %%
+age = 10
+id(age) # 140170065725376
+print(id(age))
+# %%
+age = 8
+print(id(age)) # 140535918671808
+age = 9
+print(id(age)) # 140535918671840
+
+items = [1, 2]
+print(id(items)) # 140093713593920
+items.append(3)
+print(items) # [1, 2, 3]
+print(id(items)) # 140093713593920
+
+age = 8
+age = age + 1
+#or
+age += 1
+
+""" Loops """
+
+condition = True
+while condition == True:
+    print("The condition is True")
+    condition = False
+print("After the loop")
+
+
+count = 0
+while count < 10:
+    print("The condition is True")
+    count = count + 1
+print("After the loop")
+
+items = [1, 2, 3, 4]
+for item in items:
+    print(item)
+
+for item in range(4):
+    print(item)
+
+items = [1, 2, 3, 4]
+for index, item in enumerate(items):
+    print(index, item)
+
+
+""" The first example here prints 1, 3, 4 . The second example prints 1 """
+
+items = [1, 2, 3, 4]
+for item in items:
+    if item == 2:
+        continue
+    print(item)
+
+items = [1, 2, 3, 4]
+for item in items:
+    if item == 2:
+        break
+    print(item)
+
+
+""" Classes """
+
+class Dog: # the Dog class
+    def bark(self):
+        print('WOF!')
+
+roger = Dog()
+print(type(roger)) #<class '__main__.Dog'>
+
+
+class Dog:
+# the Dog class
+    def __init__(self, name, age): #A special type of method, __init__() is called constructor
+        self.name = name
+        self.age = age
+    def bark(self):
+        print('WOF!')
+roger = Dog('Roger', 8)
+print(roger.name) # 'Roger'
+print(roger.age) # 8
+roger.bark() # 'WOF!'
+
+class Animal:
+    def walk(self):
+        print('Walking..')
+
+class Dog(Animal):
+    def bark(self):
+        print('WOF!')
+
+roger = Dog()
+roger.walk() # 'Walking..'
+roger.bark() # 'WOF!'
+
+
+""" Modules """
+
+import dog  # import The file from dog.py
+dog.bark()
+
+""" or """
+
+from dog import bark
+bark()
+
+
+from lib import dog #import file from special folder we are need file __init__.py and file with our program
+dog.bark()
+
+""" or """
+
+from lib.dog import bark
+bark()
+
+
+
+""" full list of standard library modules here:
+https://docs.python.org/3/library/index.html """
+
+""" Some of the important modules are:
+
+math for math utilities
+re for regular expressions
+json to work with JSON
+datetime to work with dates
+sqlite3 to use SQLite
+os for Operating System utilities
+random for random number generation
+statistics for statistics utilities
+requests to perform HTTP network requests
+http to create HTTP servers
+urllib to manage URLs """
+
+
+""" Variables scope """
+
+age = 8 # global variable.
+
+def test():
+    print(age)
+print(age) # 8
+test() # 8
+
+
+def test():
+    age = 8
+    print(age)
+test() # 8
+
+print(age)
+# NameError: name 'age' is not defined
+
+#""" Debugging """
+
+import math
+# breakpoint()
+print(math.sqrt(4))  # 2.0
+
+""" or """
+   
+from math import sqrt
+sqrt(4) # 2.0
+
+
+""" Accept arguments from the command line """
+
+"""  
+python <filename>.py <argument1>
+python <filename>.py <argument1> <argument2> 
+"""
+# %%
+import sys
+print(len(sys.argv))
+print(sys.argv)
+
+""" import argparse
+parser = argparse.ArgumentParser(
+    description='This program prints the name of my dogs') 
+parser.parse_args() """
+
+
+""" parser.add_argument('-c', '--color', metavar='color', required=True,
+    help='the color to search for')
+args = parser.parse_args() """
+
+#print(args.color) # 'red'
+
+
+
+
+# %%
+""" Lambda Functions """
+
+#Лямбда-функции (также называемые анонимными функциями) — это крошечные функции, которые
+#У них нет имени, и у них есть только одно выражение, подобное их телу.
+
+lambda num : num * 2
+lambda a, b : a * b
+multiply = lambda a, b : a * b
+print(multiply(2, 2)) # 4
+
+
+""" Recursion """
+""" 
+3! = 3 * 2 * 1 = 6
+4! = 4 * 3 * 2 * 1 = 24
+5! = 5 * 4 * 3 * 2 * 1 = 120 """
+
+
+def factorial(n):
+    if n == 1: return 1
+    return n * factorial(n-1)
+print(factorial(3)) # 6
+print(factorial(4)) # 24
+print(factorial(5)) # 120
+
+
+""" Вложенные функции """
+
+def talk(phrase):
+    def say(word):
+        print(word)
+    words = phrase.split(' ')
+    for word in words:
+        say(word)
+talk('I am going to buy the milk')
+
+
+
+def count():
+    count = 0
+    def increment():
+        nonlocal count
+        count = count + 1
+        print(count)
+    increment()
+count()
+
+""" Замыкания """
+
+def counter():
+    count = 0
+    def increment():
+        nonlocal count
+        count = count + 1
+        return count
+    return increment
+
+increment = counter()
+
+print(increment()) # 1
+print(increment()) # 2
+print(increment()) # 3
+
+""" Декораторы """
+
+""" @logtime """
+def hello():
+    print('hello!')
+
+def logtime(func):
+    def wrapper():
+    # do something before
+        val = func()
+    # do something after
+        return val
+    return wrapper
+
+""" Строки документации """
+# this is a comment
+num = 1 #this is another comment
+def increment(n):
+    """Increment a number"""
+    return n + 1
+
+
+class Dog:
+    """A class representing a dog"""
+    def __init__(self, name, age):
+        """Initialize a new dog"""
+        self.name = name
+        self.age = age
+    def bark(self):
+        """Let the dog bark"""
+        print('WOF!')
+
+
+""" Самоанализ """
+
+def increment(n):
+    return n + 1
+print(increment)
+# <function increment at 0x7f420e2973a0>
+
+class Dog():
+    def bark(self):
+        print('WOF!')
+roger = Dog()
+print(roger)
+# <__main__.Dog object at 0x7f42099d3340>
+
+print(type(increment))
+# <class 'function'>
+print(type(roger))
+# <class '__main__.Dog'>
+print(type(1))
+# <class 'int'>
+print(type('test'))
+# <class 'str'>
+
+print(dir(roger))
+
+print(id(roger)) # 140227518093024
+print(id(1)) # 140227521172384
+
+
+""" Annotations """
+ 
+def increment(n):
+    return n + 1
+
+""" or """
+
+def increment(n: int) -> int:
+    return n + 1
+count: int = 0
+
+""" Exceptions """
+
+""" try:
+# some lines of code
+    except <ERROR1>:
+# handler <ERROR1>
+    except <ERROR2>:
+# handler <ERROR2> """
+
+
+
+filename = '/Users/pcab/Documents/python/test.txt'
+try:
+    file = open(filename, 'r')
+    content = file.read()
+    print(content)
+finally:
+    file.close()
+
+""" or """
+
+filename = '/Users/pcab/Documents/python/test.txt'
+with open(filename, 'r') as file:
+    content = file.read()
+    print(content)
+
+""" Список понятий """
+numbers = [1, 2, 3, 4, 5]
+numbers_power_2 = [n**2 for n in numbers]
+# [1, 4, 9, 16, 25]
+
+"""or"""
+numbers_power_2 = []
+for n in numbers:
+    numbers_power_2.append(n**2)
+
+""" or """
+
+numbers_power_2 = list(map(lambda n : n**2, numbers))
+
+""" Полиморфизм """
+
+class Dog:
+    def eat(self):
+        print('Eating dog food')
+class Cat:
+    def eat(self):
+        print('Eating cat food')
+
+animal1 = Dog()
+animal2 = Cat()
+animal1.eat()
+animal2.eat()
+
+
+""" Operator Overloading """
+
+class Dog:
+# the Dog class
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+roger = Dog('Roger', 8)
+syd = Dog('Syd', 7)
+
+
+class Dog:
+# the Dog class
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __gt__(self, other):
+        return True if self.age > other.age else False
